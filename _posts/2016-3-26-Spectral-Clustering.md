@@ -74,7 +74,7 @@ $$
 
 * We call an $$n \times n$$ matrix $A$ positive semi-definite if $$\mathbf{x}^T A \mathbf{x} \geq 0$$
 
-* Given a graph $$G$$, if we call its adjacency matrix $$A$$ and its degree matrix $$D$$ (diagonal matrix that describes number of edges coming out of each node), then it's Laplacian matrix $$L$$ can be computed as $$L = D - A$$. For example, for the graph below:
+* Given a graph $$G$$, if we call its adjacency matrix $$A$$ and its degree matrix $$D$$ (diagonal matrix that describes number of edges coming out of each node), then its Laplacian matrix $$L$$ can be computed as $$L = D - A$$. For example, for the graph below:
 
 {: style="text-align:center"}
 ![Ideal Clustering]({{ site.baseurl }}/images/blogpost1/graphsimple.png){: style="max-width:300px; height: auto;"}
@@ -83,8 +83,6 @@ $$
 
 {: style="text-align:center"}
 ![Ideal Clustering]({{ site.baseurl }}/images/blogpost1/graphsimpleL.png){: style="max-width:500px; height: auto;"}
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can roughly think of the Laplacian as tracing the vertices of our graph.
 
 ### Main Algorithm ###
 
@@ -96,7 +94,7 @@ Okay, now that we have preliminary background out of the way, we should establis
 
 3. Do k-means clustering on feature vectors made out of components of the eigenvectors we obtained from the eigendecomposition. 
 
-Alright... so we have a procedure. And it happens that this procedure works well for non convex clustering. But why??
+Alright... so we have a procedure. And it happens that this procedure works well for non-convex clustering. But why??
 
 ### Overview: Why the Algorithm Works ###
 
@@ -124,7 +122,7 @@ Here is another example graph - it is not fully connected. The two eigenvectors 
 
 ### Establishing Properties to Prove Claims ###
 
-We will go through and establish some mathematical properties regarding our setup in order to prove the claims made in the above section "Overview: Why the Algorithm Works" to justify why the algorithm works to find connected components (which we call our clusters) in our similarity graph. Once again, for the below, recall that the unnormalized graph Laplacian is defined as $$L = D - W$$:
+We will go through and establish some mathematical properties regarding our setup in order to prove the claims made in the above section to justify why the algorithm works to find connected components (which we call our clusters) in our similarity graph. Once again, for the below claims, recall that the unnormalized graph Laplacian is defined as $$L = D - W$$:
 
 1. $$L$$ is symmetric because $$D$$ and $$W$$ are symmetric (trivial)
 
@@ -160,7 +158,7 @@ $$
 \sum^{n}_{i=1} d_i x_i^2 -\sum^{n}_{i,j=1} x_i x_j \omega_{ij} = \frac{1}{2}\left(\sum^{n}_{i=1}d_i x_i^2 - 2\sum^{n}_{i,j=1} x_i x_j \omega_{ij} + \sum^{n}_{j=1} d_j x_j^2\right) 
 $$
 
-Notice that because for a fixed $$i$$, summing along $$j$$ will give you the the sum of the $\omega_{ij}$, must be $d_i$ (we are just saying that in each row the sum of the adjacencies is equal to the degree of the vertex, which is true by definition). We can thus write:
+Notice that for a fixed $$i$$ summing along $$j$$ will give you the the sum of the $\omega_{ij}$. This must be $d_i$ due to the fact that in each row the sum of the adjacencies is equal to the degree of the vertex, which is true by definition. We can thus write:
 
 $$
 \sum^{n}_{i=1} d_i x_i^2 = \sum^{n}_{i,j=1} \omega_{ij} x_i^2
@@ -172,13 +170,13 @@ $$
 \frac{1}{2}\left(\sum^{n}_{i=1}d_i x_i^2 - 2\sum^{n}_{i,j=1} x_i x_j \omega_{ij} + \sum^{n}_{j=1} d_j x_j^2\right) = \frac{1}{2}\left(\sum^{n}_{i,j=1} \omega_{ij} x_i^2 - 2\sum^{n}_{i,j=1} x_i x_j \omega_{ij} + \sum^{n}_{i,j=1} \omega_{ij} x_j^2\right) 
 $$
 
-Note that it doesn't matter whether we have $$x_i$$ or $$x_j$$ in our first and third terms - our adjacency matrix is symmetric so the summation will produce the same value. Now that our indexing is consistent we combine the sums into one large sum to obtain:
+Note that it doesn't matter whether we have $$x_i$$ or $$x_j$$ in our first and third terms - our adjacency matrix is symmetric so the summation will produce the same value. Now that our indexing is consistent, so we can combine the sums into one large sum to obtain:
 
 $$
 \frac{1}{2} \left(\sum^{n}_{i,j=1} \omega_{ij}x_i^2 -\omega{ij}2x_i x_j + \omega_{ij}x_j^2 \right) = \frac{1}{2} \sum^{n}_{i,j=1} \omega_{ij} (x_i-x_j)^2
 $$
 
-Because $$\omega_{ij}$$ are nonnegative by definition, and because the square term must be nonnegative we obtain what we desired:
+Because $$\omega_{ij}$$ are nonnegative by definition, and because the square term must be nonnegative, we obtain what we desired:
 
 $$
 \mathbf{x}'L\mathbf{x} = \frac{1}{2} \sum^{n}_{i,j=1} \omega_{ij} (x_i-x_j)^2 \geq 0 
@@ -239,7 +237,7 @@ $$
 This implies that $$v_i = v_j\:\forall i,j$$ because the sum on the right must be $$0$$. Moreover, $$v_i = v_j \forall i,j$$ provides the unique solution for our eigenvector, which is simply the $$\mathbf{1}$$ vector, as all of its components are equal. Thus, the multiplicity of our $$0$$ eigenvalue is exactly 1, as expected because we have only 1 connected component (the entire graph). In addition, our eigenvector is the entire $\mathbf{1}$ vector, meaning that every vertex in our graph is part of the component (also as expected). 
 
 {: style="text-align:center"}
-![Ideal Clustering]({{ site.baseurl }}/images/blogpost1/1comp.png){: style="max-width:900px; height: auto;"}
+![Ideal Clustering]({{ site.baseurl }}/images/blogpost1/1comp.png){: style="max-width:600px; height: auto;"}
 
 #### Main Claim for k Connected Components ####
 
