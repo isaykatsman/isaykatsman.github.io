@@ -3,7 +3,7 @@ layout: post
 title: Spectral Clustering
 ---
 
-What is clustering? In our case, clustering is the problem of unsupervised grouping of related points in an $$n$$-dimensional feature space. Below we see an example of original data points together with their ideal clustering (based on spatial locality, in this case):
+We must first ask, what is clustering? In our case, clustering is the problem of unsupervised grouping of related points in an $$n$$-dimensional feature space. Below we see an example of original data points together with their ideal clustering (based on spatial locality):
 
 {: style="text-align:center"}
 ![Ideal Clustering]({{ site.baseurl }}/images/blogpost1/idealclustering.png){: style="max-width:500px; height: auto;"}
@@ -36,7 +36,7 @@ $$\mu_j := \frac{\sum^{m}_{i=1} 1\{c^i = j\}x^i}{\sum^{m}_{i=1} 1\{c^i = j\}}$$
 
 \}
 
-This clustering algorithm works fairly well, and given a reasonable $$k$$, often finds good clusters for fairly convex data. However, it isn't perfect and there are cases when it fails miserably.
+This clustering algorithm works fairly well, and given a reasonable $$k$$, often finds good clusters for fairly convex data. However, it isn't perfect and there are cases where it fails miserably.
 
 ## Motivation for More Advanced Clustering ##
 
@@ -50,11 +50,11 @@ As you can see, it separates these two very convex clusters with ease. However, 
 {: style="text-align:center"}
 ![Ideal Clustering]({{ site.baseurl }}/images/blogpost1/kmeansbad.png){: style="max-width:500px; height: auto;"}
 
-In this case, K-means does rather poorly. Though a more reasonable clustering would be to cluster the inner points in one cluster due to their greater local connectedness, K-means blindly uses it's Euclidean metric and gives us the garbage above. In order to obtain reasonable clustering for harder cases where we put more value on overall local connectivity than global minimization of average euclidean distance, we are going to need another clustering method. 
+In this case, K-means does rather poorly. Though a more reasonable clustering would be to cluster the inner points together due to the greater local density of their connections, K-means blindly uses it's Euclidean metric and gives us the garbage above. In order to obtain reasonable clustering for harder cases where we put more value on overall local connectivity than global minimization of average euclidean distance, we are going to need another clustering method. 
 
 ## Spectral Clustering ##
 
-You guessed it, Spectral clustering is the undupservised learning algorithm we are looking for. It is called "Spectral" because we will be using important properties about the spectrum of a particular type of matrix (the spectrum of a matrix is its set of eigenvalues) - the Laplacian matrix - in order to get our algorithm to work. In the following, I hope to give you a thorough enough explanation so you are not only able to apply spectral clustering, but are also able to understand the theory behind why it works. First, we establish some background.
+You guessed it, Spectral clustering is the unsupervised learning algorithm we are looking for. It is called "Spectral" because we will be using important properties about the spectrum of a particular type of matrix (the spectrum of a matrix is its set of eigenvalues) - the Laplacian matrix - in order to get our algorithm to work. In the following, I hope to give you a thorough enough explanation so you are not only able to apply spectral clustering, but are also able to understand the theory behind why it works. First, we establish some background.
 
 ### Necessary Theory ###
 
