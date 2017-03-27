@@ -3,6 +3,10 @@ layout: post
 title: Spectral Clustering
 ---
 
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 ## Part 1 ##
 
 Spectral clustering is an incredibly useful algorithm for non-convex clustering (standard convex clustering algorithm is k-means). 
