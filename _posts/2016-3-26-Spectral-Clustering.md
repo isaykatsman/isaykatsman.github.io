@@ -36,11 +36,11 @@ $$\mu_j := \frac{\sum^{m}_{i=1} 1\{c^i = j\}x^i}{\sum^{m}_{i=1} 1\{c^i = j\}}$$
 
 \}
 
-This clustering algorithm works fairly well, and given a reasonable $$k$$, often finds good clusters for fairly convex data. However, it isn't perfect and there are cases where it fails miserably.
+This clustering algorithm can work well, and given a reasonable $$k$$, often finds good clusters for convex data. However, it isn't perfect and there are cases where it fails miserably.
 
 ## Motivation for More Advanced Clustering ##
 
-It turns out that K-means is fairly faulty and only works well for convex clusters. Here is an example of K-means run with $$k=2$$ on this data set of 2 clusters:
+It turns out that K-means is faulty and only works well for convex clusters. Here is an example of K-means run with $$k=2$$ on this data set of 2 clusters:
 
 {: style="text-align:center"}
 ![Ideal Clustering]({{ site.baseurl }}/images/blogpost1/kmeansgood.png){: style="max-width:500px; height: auto;"}
