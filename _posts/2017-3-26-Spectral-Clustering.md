@@ -98,15 +98,15 @@ Alright... so we have a procedure. And it happens that this procedure works well
 
 ### Overview: Why the Algorithm Works ###
 
-A rough description of why the algorithm works (which we will later during this post make more rigorous) is given below, with no proof (these are just claims at this point):
+A rough description of why the algorithm works (which we will later expound upon) is given below, with no proof (these are just claims at this point):
 
-1. We have $$L$$, the Laplacian matrix of the similarity graph. Then, the multiplicity of eigenvalue $$0$$ of $$L$$ equals the number of connected components in the graph.
+1. Given $$L$$, the Laplacian matrix of the similarity graph, we know the multiplicity of eigenvalue $$0$$ of $$L$$ equals the number of connected components in the graph.
 
 2. The eigenvectors corresponding to this eigenvalue are disjoint, and each represents a connected component of the similarity graph.
 
-3. Thus finding these eigenvectors corresponds to finding the connected components of the similarity graph, which are the clusters we desire.
+So, finding the eigenvectors in (2) corresponds to finding the connected components of the similarity graph, which are the clusters we desire.
 
-That's all I will say about the claim for now. Time for some examples. (If you are thinking that this is useless because you might as well just run DFS through the entire graph to find its connected components, I asure you things will get more interesting. We will demonstrate that this method works more generally for "loosely" connected components, which can no longer be easily found via DFS but can still be easily found with spectral clustering).
+That's all I will say about the claim for now. Time for some examples. (If you are thinking this is useless because you might as well just run DFS through the entire graph to find its connected components, I assure you, things will get more interesting. We will demonstrate that this method works more generally for "loosely" connected components, which can no longer be easily found via DFS but can still be easily found with spectral clustering.)
 
 ### General Idea with Example ###
 
