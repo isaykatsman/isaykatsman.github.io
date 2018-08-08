@@ -254,7 +254,7 @@ The previous claim for 1 connected component applies to each of the blocks indiv
 
 ### Loosely Connected Clusters ###
 
-So in practice, your similarity graph won't usually be perfectly separated into connected components. There will be some noise, some additional edges, that sparesely connect densely connected components. How does spectral clustering deal with such instances? Well, in practice, you typically set your $k$ to be roughly the multiplicity of your 0 eigenvalue (usually this multiplicity includes eigenvectors of eigenvalues that are almost 0 as well). It turns out if you take the first $k$ eigenvectors out of your list of eigenvectors sorted from smallest to largest eigenvalue, these $k$ eigenvectors usually contain enough information to separate your data into $k$ clusters. To obtain intuition behind why this works, let's take a look at an example. 
+So in practice, your similarity graph won't usually be perfectly separated into connected components. There will be some noise, some additional edges, that sparsely connect densely connected components. How does spectral clustering deal with such instances? Well, in practice, you typically set your $k$ to be roughly the multiplicity of your 0 eigenvalue (usually this multiplicity includes eigenvectors of eigenvalues that are almost 0 as well). It turns out if you take the first $k$ eigenvectors out of your list of eigenvectors sorted from smallest to largest eigenvalue, these $k$ eigenvectors usually contain enough information to separate your data into $k$ clusters. To obtain intuition behind why this works, let's take a look at an example. 
 
 In the following graph we have two "Loosely" connected clusters:
 
