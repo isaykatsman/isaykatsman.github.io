@@ -124,13 +124,13 @@ Here is another example graph - it is not fully connected. The two eigenvectors 
 
 We will go through and establish some mathematical properties regarding our setup in order to prove the claims made in the above section to justify why the algorithm works to find connected components (which we call our clusters) in our similarity graph. Once again, for the below claims, recall that the unnormalized graph Laplacian is defined as $$L = D - W$$:
 
-1. $$L$$ is symmetric because $$D$$ and $$W$$ are symmetric (trivial)
+1. $$L$$ is symmetric because $$D$$ and $$W$$ are symmetric (trivial).
 
-2. $$L$$ is positive semi-definite
+2. $$L$$ is positive semi-definite.
 
-3. Because $$L$$ is positive semi-definite, all eigenvalue are greater than or equal to 0
+3. Because $$L$$ is positive semi-definite, all eigenvalues are greater than or equal to 0.
 
-4. The smallest eigenvalue of $$L$$ is 0 and the corresponding eigenvector is $$\mathbf{1}$$
+4. The smallest eigenvalue of $$L$$ is 0 and the corresponding eigenvector is $$\mathbf{1}$$.
 
 We now go through and prove these properties.
 
