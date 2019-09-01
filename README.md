@@ -1,3 +1,3 @@
-# Isay Katsman ML/CV Blog
+# Personal website repo
 
-A blog for posts about things I find interesting and things I want to share regarding work or personal academic interests. 
+Summary of my work and academic profile.
