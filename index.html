@@ -1,18 +1,299 @@
----
-layout: default
----
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Guandao Yang's Home page.">
+    <meta name="author" content="Guandao Yang">
+    <link rel="icon" href="images/cuvl.png">
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+    <title>Guandao Yang</title>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+    <!-- Custom styles for this template -->
+    <link href="css/narrow-jumbotron.css" rel="stylesheet">
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111714927-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111714927-1');
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <main role="main">
+
+        <div id="about" class="row marketing">
+
+                <div class="col-lg-3">
+                    <figure class="figure">
+                        <img src="images/myself.jpeg" class="figure-img rounded" alt="Me." style="width: 140%; height: auto;"> <!--img-fluid-->
+                    </figure>
+                </div>
+                <div class="col-lg-8 offset-lg-1">
+                    <div class="row marketing" style="margin-top:0">
+                        <h2>Isay Katsman</h2>
+                    </div>
+                    <div class="row marketing">
+                        <p>I'm a Computer Science and Math undergraduate student at Cornell University, advised by 
+                        <a href="https://vision.cornell.edu/se3/people/serge-belongie/">Serge Belongie</a>.
+                        My research interests include machine learning and computer vision, particularly in the context of generative models and security (adversarial examples).
+                        </p>
+                        <p>
+                        Currently, I am actively seeking PhD advisors for Fall 2020.
+                        </p>
+                    </div>
+                    <div class="row marketing">
+                        <p><b>Email: </b>isk22@cornell.edu
+                        <!--[<a href="pdf/Guandao-Yang-CV-Public.pdf">Resume</a>]-->
+                        [<a href="https://github.com/isaykatsman">Github</a>]
+                        [<a href="https://scholar.google.com/citations?hl=en&user=6DVk_M0AAAAJ">Google Scholar</a>]
+                        [<a href="https://www.linkedin.com/in/isay-katsman-031171a0/">LinkedIn</a>]
+                        </p>
+                    </div>
+                </div>
+        </div>
+        <div class="row marketing">
+            <!--Place holder-->
+        </div>
+
+
+        <div id="projects" class="row marketing">
+            <div class="row" style="width:100%">
+                <div class="col-lg-12">
+                    <h2>Publications</h2>
+                    <hr>
+                </div>
+            </div>
+            <!-- <div class="media">
+                <img class="mr-3" src="images/Discriminative-Caption-Evaluation-Metrics.jpg" alt="Generic placeholder image">
+                <div class="media-body">
+                    <h5 class="mt-0">Media heading</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </div> -->
+
+            <div class="row" style="width:100%">
+                    <div class="col-lg-12">
+                        <h3>Conferences</h3>
+                    </div>
+            </div>
+
+            <div class="row marketing">
+                <div class="col-lg-3">
+                    <img class="img-thumbnail" src="images/ila.png" style="width:auto;max-height:200px;margin-left:11%;"/>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5><span class="font-italic">(ICCV 2019)</span>
+                        Enhancing Adversarial Example Transferability with an Intermediate Level Attack
+                        [<a href="https://arxiv.org/abs/1907.10823v1">Arxiv</a>]
+                    </h5>
+                    <p><b>Isay Katsman*</b>, Qian Huang*, Horace He*, Zeqi Gu*, Serge Belongie, Ser-Nam Lim</p> 
+                </div>
+
+                <div class="col-lg-3">
+                    <img class="img-thumbnail" src="images/fashionplus.gif" style="width:100%;max-height:200px"/>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5><span class="font-italic">(ICCV 2019)</span>
+                        Fashion++: Minimal Edits for Outfit Improvement
+                        [<a href="https://arxiv.org/abs/1904.09261">Arxiv</a>]
+                        [<a href="http://vision.cs.utexas.edu/projects/FashionPlus/">Project Page</a>]
+                    </h5>
+                    <p>Wei-Lin Hsiao, <b>Isay Katsman*</b>, Chao-Yuan Wu*, Devi Parikh, Kristen Grauman</p>
+                </div>
+            </div>
+
+            <div class="row marketing">
+                <div class="col-lg-3">
+                    <img class="img-thumbnail" src="images/gap.jpg" style="width:100%;max-height:200px"/>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5><span class="font-italic">(CVPR 2018)</span>
+                        Generative Adversarial Perturbations
+                        [<a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Poursaeed_Generative_Adversarial_Perturbations_CVPR_2018_paper.pdf">Link</a>]
+                        [<a href="https://github.com/OmidPoursaeed/Generative_Adversarial_Perturbations">Code</a>]
+                    </h5>
+                    <p>Omid Poursaeed, <b>Isay Katsman</b>, Bicheng Gao, Serge Belongie</p>
+                    <!-- <p>A learning-based evaluation metric for image captioning task with state-of-the-art human correlations.</p> -->
+                </div>
+            </div>
+
+            <div class="row" style="width:100%">
+                    <div class="col-lg-12">
+                        <h3>Workshops</h3>
+                    </div>
+            </div>
+
+            <div class="row marketing">
+
+            <div class="col-lg-3">
+                    <img class="img-thumbnail" src="images/decomp.png" style="width:100%;max-height:200px"/>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5><span class="font-italic">(ICML 2019 Workshop, Security and Privacy of Machine Learning)</span>
+                        Adversarial Example Decomposition
+                        [<a href="https://arxiv.org/abs/1812.01198v2">Arxiv</a>]
+                    </h5>
+                    <p>Horace He, Aaron Lou*, Qingxuan Jiang*, <b>Isay Katsman*</b>, Serge Belongie, Ser-Nam Lim</p>
+                    <!-- <p>A learning-based evaluation metric for image captioning task with state-of-the-art human correlations.</p> -->
+                </div>
+                <div class="col-lg-3">
+                    <img class="img-thumbnail" src="images/scarcesemseg.png"  style="width:100%;max-height:200px"/>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5><span class="font-italic">(ICML 2018 Workshop, Vision with Biased or Scarce Data)</span>
+                        Semantic Segmentation with Scarce Data 
+                        [<a href="https://arxiv.org/abs/1807.00911">Arxiv</a>]</h5>
+                    <p><b>Isay Katsman*</b>, Rohun Tripathi*, Andreas Veit, Serge Belongie</p>
+                </div>
+            </div>
+        </div>
+        <center>
+                <p class="center">*indicates equal contribution</p>
+        </center>
+
+        <div id="experiences" class="row marketing">
+            <div class="row" style="width:100%">
+                <div class="col-lg-12">
+                    <h2>Experiences</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-6">
+                    <div class="row marketing">
+                        <div class="col-lg-4">
+                            <img class="img-thumbnail" src="images/fb.png"  style="width:100%;max-height:200px;max-width:200px"/>
+                        </div>
+                        <div class="col-lg-8">
+                            <h6>Facebook</h6>
+                            <p>Research Intern<br>May 2019 - present</p>
+                            <p>Working with Prof. Kristen Grauman.</p>
+                        </div>
+                    </div>
+
+                    <div class="row marketing">
+                        <div class="col-lg-4">
+                            <img class="img-thumbnail" src="images/fsq.png"  style="width:100%;max-height:200px;max-width:200px"/>
+                        </div>
+                        <div class="col-lg-8">
+                            <h6>Foursquare</h6>
+                            <p>Software Engineering Intern<br>May 2017 - Aug 2017</p>
+                            <p>Worked on building RNNs for large-scale venue data extraction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="row marketing">
+                        <div class="col-lg-4">
+                            <img class="img-thumbnail" src="images/fb.png"  style="width:100%;max-height:200px;max-width:200px"/>
+                        </div>
+                        <div class="col-lg-8">
+                            <h6>Facebook</h6>
+                            <p>Software Engineer Intern<br>May 2018 - Aug 2018</p>
+                            <p>Intern on Facebook AI Research (FAIR) team.</p>
+                        </div>
+                    </div>
+                    <div class="row marketing">
+                        <div class="col-lg-4">
+                            <img class="img-thumbnail" src="images/avg.jpg"  style="width:100%;max-height:200px;max-width:200px"/>
+                        </div>
+                        <div class="col-lg-8">
+                            <h6>Avigilon</h6>
+                            <p>Software Engineering Intern<br>May 2016  - Aug 2016, May 2015 - Aug 2015</p>
+                            <p>Worked on building Siamese and Triplet networks for appearance-based similarity learning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="media">
+                <img class="mr-3 img-thumbnail" src="images/google-logo.jpg" alt="Generic placeholder image" style="max-height:100px">
+                <div class="media-body">
+                    <h5 class="mt-0">Software Engineer Intern</h5>
+                </div>
+            </div> -->
+
+
+            <div class="row marketing" style="width:100%">
+                <!--Place holder-->
+                <hr>
+            </div>
+        </div>
+
+        <div id="experiences" class="row marketing">
+                <div class="row" style="width:100%">
+                    <div class="col-lg-12">
+                        <h2>Leadership</h2>
+                        <hr>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row marketing text-center">
+                            <div class="col-lg-6">
+                                <img class="img-thumbnail" src="images/cuvl.png"  style="width:100%;max-height:200px;max-width:200px"/>
+                            </div>
+                            <div class="col-lg-6">
+                                <h6>Cornell University Vision and Learning (CUVL)</h6>
+                                <p>Co-president<br>Aug 2018 - present<br><a href="https://cuvl.github.io">Official Club Website</a><br><a href="https://www.cs.cornell.edu/information/news/newsitem10811/cornell-undergraduate-vision-and-learning-cuvl-has-paper-accepted">Press Release</a></p>
+                                <p>Founded a club focused on undergraduate research and education in the fields of computer vision and machine learning. The club is funded by and works directly with Facebook AI.</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="row marketing" style="width:100%">
+
+                <hr>
+                </div>
+         </div>
+
+         <div id="experiences" class="row marketing">
+            <div class="row" style="width:100%">
+                <div class="col-lg-12">
+                    <h2>Service and Awards</h2>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="row marketing" style="width:100%">
+                <h5>Reviewing: ICCV 2019 Secondary Reviewer, CVPR 2019 Secondary Reviewer</h5>
+                <hr>
+            </div>
+
+            <div class="row marketing" style="width:100%">
+                <h5>2019 CRA Award for Outstanding Undergraduate Researchers - Honorable Mention</h5>
+                <hr>
+            </div>
+            <div class="row marketing" style="width:100%">
+
+            <hr>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+    <p>&copy; Isay Katsman 2019</p>
+    </footer>
+
+</div> <!-- /container -->
+</body>
+</html>
